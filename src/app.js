@@ -33,7 +33,7 @@ app.use(
 // este middleware permite entender lo que el form envia para poder insertar en la db
 app.use(express.urlencoded({ extended: false }));
 // routes
- 
+
 app.use("/", customerRoutes);
 
 // staticts files
@@ -43,5 +43,5 @@ app.use(express.static(path.join(__dirname, "public")));
 // starting the server
 
 app.listen(app.get("port"), () => {
-  console.log("server on port 3000".red);
+  console.log("server on port 3000".green);
 });
