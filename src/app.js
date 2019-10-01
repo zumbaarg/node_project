@@ -30,9 +30,10 @@ app.use(
   )
 );
 
+// este middleware permite entender lo que el form envia para poder insertar en la db
 app.use(express.urlencoded({ extended: false }));
 // routes
-
+ 
 app.use("/", customerRoutes);
 
 // staticts files

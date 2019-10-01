@@ -16,8 +16,11 @@ controller.list = (req, res) => {
 
 controller.save = (req, res) => {
   req.getConnection((err, conn) => {
+    console.log(req.body);
+    //    res.send("works");
     const data = req.body;
     conn.query("INSERT INTO customer set ?", [data], (err, customer) => {
+      console.log(err);
       res.redirect("/");
     });
   });
@@ -47,7 +50,7 @@ controller.update = (req, res) => {
   });
 };
 
-controller.save = (req, res) => {
+controller.upd = (req, res) => {
   const { id } = req.params;
   const newCustomer = req.body;
   req.getConnection((err, conn) => {
