@@ -1,4 +1,5 @@
 const express = require("express");
+const colors = require("colors");
 const path = require("path");
 const app = express();
 const morgan = require("morgan");
@@ -41,5 +42,5 @@ app.use(express.static(path.join(__dirname, "public")));
 // starting the server
 
 app.listen(app.get("port"), () => {
-  console.log("server on port 3000");
+  console.log("server on port 3000".red);
 });
